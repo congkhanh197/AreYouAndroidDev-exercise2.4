@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/post_list"
+        android:title="Post By List View"/>
+    <item android:id="@+id/post_group"
+        android:title="Post By Expandable List View"/>
+    <item android:id="@+id/post_recycle"
+        android:title="Post By Recycle View"/>
+</menu>
