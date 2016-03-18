@@ -94,16 +94,22 @@ public class PostListAdapter extends ArrayAdapter<RedditPost> implements View.On
                 }
 
             }
-            v.findViewById(R.id.view_click_available).setTag(position);
+
         }
+        v.findViewById(R.id.view_click_available).setTag(position);
         return v;
     }
 
     @Override
     public void onClick(View v) {
         final int position = (int) v.getTag();
-        final RedditPost data = redditPosts.get(position);
-        String url = (getItemViewType(position) == TYPE_BOTTOM_ITEM) ? "https://www.reddit.com/r/androiddev" : data.getUrl();
+        final String url;
+        if (getItemViewType(position)== TYPE_BOTTOM_ITEM){
+            url = "https://www.reddit.com/r/androiddev";
+        } else {
+            final RedditPost data = redditPosts.get(position);
+            url= data.getUrl();
+        }
         sentBack.OnItemClick(url);
     }
 }
